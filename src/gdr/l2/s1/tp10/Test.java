@@ -2,8 +2,16 @@ package gdr.l2.s1.tp10;
 
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Grégory
+ */
 public class Test {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         ArbreBRCons tree1 = new ArbreBRCons(
                 8,
@@ -14,24 +22,43 @@ public class Test {
                         new ArbreBRCons(9), 
                         new ArbreBRCons(14))
                 );
-        tree1.afficheGRD();
-        System.out.println();
+        afficherArbreBR("Arbre 1 ",tree1);
         ArbreBR tree2 = tree1.supprimer(3);
-        tree2.afficheGRD();
-        System.out.println();
+        afficherArbreBR("Arbre 2 ",tree2);
         
+        //transforme l'arbre visé en arraylist trié
         ArrayList<Integer> list = new ArrayList();
         tree1.arbreBRenTab(list);
-        afficherArrayList(list);
+        afficherArrayList("Arbre R ",list);
         
+        Integer toI = new Integer(2);
+        ArbreBR treeT = tree1.insertTo(toI);
+        afficherArbreBR("Arbre T ",treeT);
+        
+        //transforme l'arraylist trié en arbre binaire de recherche
         ArbreBRCons tree3 = new ArbreBRCons(list);
-        tree3.afficheGRD();
+        afficherArbreBR("Arbre 3 ",tree3);
     }
     
-    public static void afficherArrayList(ArrayList<Integer> list){
+    /**
+     * Affiche l'arraylist entré en paramètre dans la console
+     * @param list ArrayList à afficher
+     */
+    public static void afficherArrayList(String str, ArrayList<Integer> list){
+        System.out.print(str+" ||  ");
         for(int i=0;i<list.size();i++){
             System.out.print(list.get(i).toString()+" ");
         }
+        System.out.println();
+    }
+    
+    /**
+     * Affiche l'arbre entré en paramètre dans la console
+     * @param tree Arbre à afficher
+     */
+    public static void afficherArbreBR(String str, ArbreBR tree){
+        System.out.print(str+" ||  ");
+        tree.afficheGRD();
         System.out.println();
     }
 }

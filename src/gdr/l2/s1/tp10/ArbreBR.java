@@ -3,7 +3,7 @@ package gdr.l2.s1.tp10;
 import java.util.ArrayList;
 
 /**
- *
+ * Classe Arbre Binaire de Recherche
  * @author Grégory
  */
 public abstract class ArbreBR {
@@ -194,11 +194,11 @@ class ArbreBRCons extends ArbreBR {
         Integer midValue = list.get(mid);
         Integer adValue = list.get(mid-1);
         Integer agValue = list.get(mid+1);
-        if(max>0){
-            //insère la racine
-            this.racine = new ArbreBRCons(midValue,new ArbreBRVide(),new ArbreBRVide());
+        if(max>2){
+            //insère la racine si la taille de l'arraylist contient 3 éléments ou plus
+            this.insertTo(midValue);
         } else {
-            
+            //
         }
     }
 
