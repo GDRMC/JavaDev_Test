@@ -192,11 +192,14 @@ class ArbreBRCons extends ArbreBR {
         int max = list.size();
         int mid = list.size()/2;
         Integer midValue = list.get(mid);
-        Integer adValue = list.get(mid-1);
-        Integer agValue = list.get(mid+1);
         if(max>2){
             //insère la racine si la taille de l'arraylist contient 3 éléments ou plus
-            this.insertTo(midValue);
+            this.racine = midValue;
+            this.Ag = new ArbreBRCons(midValue-1);
+            this.Ad = new ArbreBRCons(midValue+1);
+            list.remove(midValue);
+            list.remove(midValue-1);
+            list.remove(midValue+1);
         } else {
             //
         }

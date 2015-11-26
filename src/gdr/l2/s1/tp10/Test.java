@@ -36,8 +36,15 @@ public class Test {
         afficherArbreBR("Arbre T ",treeT);
         
         //transforme l'arraylist trié en arbre binaire de recherche
-        ArbreBRCons tree3 = new ArbreBRCons(list);
-        afficherArbreBR("Arbre 3 ",tree3);
+        //ArbreBRCons tree3 = new ArbreBRCons(list);
+        /*
+        ArbreBR tree4 = tree1.insertTo(15);
+        afficherArbreBR("Arbre 4 ",tree4);
+        ArrayList<Integer> list2 = new ArrayList();
+        tree4.arbreBRenTab(list2);
+        ArbreBRCons treeR = new ArbreBRCons(list2);
+        afficherArbreBR("Arbre R ",treeR);
+        */
     }
     
     /**
