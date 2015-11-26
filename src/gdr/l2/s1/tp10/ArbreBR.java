@@ -2,21 +2,102 @@ package gdr.l2.s1.tp10;
 
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Grégory
+ */
 public abstract class ArbreBR {
+
+    /**
+     * Retourne la racine actuelle de l'arbre
+     * @return Integer racine actuelle
+     */
     public abstract Integer getRacine();
+
+    /**
+     * Retourne l'arbre de gauche de la racine actuelle
+     * @return ArbreBR arbre à gauche de la racine actuelle
+     */
     public abstract ArbreBR getAg();
+
+    /**
+     * Retourne l'arbre à droite de la racine actuelle
+     * @return ArbreBR arbre à droite de la racine actuelle
+     */
     public abstract ArbreBR getAd();
+
+    /**
+     * Setter racine d'un arbre
+     * @param s racine à appliquer
+     */
     public abstract void setRacine(Integer s);
+
+    /**
+     * Setter racine à gauche
+     * @param Ag racine à gauche
+     */
     public abstract void setAg(ArbreBR Ag);
+
+    /**
+     * Setter racine à droite
+     * @param Ad racine à droite
+     */
     public abstract void setAd(ArbreBR Ad);
+
+    /**
+     * Savoir si la racine visée est une feuille
+     * @return boolean etat
+     */
     public abstract boolean estFeuille();
+
+    /**
+     * Retourne l'élément le plus à gauche de l'arbre actuel
+     * @return Integer élément le plus à gauche
+     */
     public abstract Integer lePlusAGauche();
+
+    /**
+     * Retourne l'élément le plus à droite de l'arbre actuel
+     * @return Integer élément le plus à droite
+     */
     public abstract Integer lePlusADroite();
+
+    /**
+     * Affiche l'arbre dans la console
+     */
     public abstract void afficheGRD();
+
+    /**
+     * Retourne true si l'élément est un arbre vide
+     * @return boolean etat
+     */
     public abstract boolean estVide();
+
+    /**
+     * Insère l'élément rentré en paramètre dans l'arbre
+     * @param s élément à insérer
+     * @return état de l'insertion
+     */
     public abstract ArbreBR insertTo(Integer s);
+
+    /**
+     * Recherche un élément dans l'arbre
+     * @param e élément à rechercher
+     * @return état de la recherche
+     */
     public abstract boolean rechercheABR(Integer e);
+
+    /**
+     * Supprime un élément dans l'arbre
+     * @param e élément à supprimer
+     * @return retourne le nouvel arbre
+     */
     public abstract ArbreBR supprimer(Integer e);
+
+    /**
+     * Crée un ArrayList à partir d'un arbre
+     * @param L arbre à copier
+     */
     public abstract void arbreBRenTab(ArrayList L);
 }
 
@@ -108,19 +189,17 @@ class ArbreBRCons extends ArbreBR {
     }
     
     ArbreBRCons(ArrayList<Integer> list){
-        /*
         int max = list.size();
         int mid = list.size()/2;
-        Integer midValue = list.get(mid).intValue();
-        Integer adValue = list.get(mid-1).intValue();
-        Integer agValue = list.get(mid+1).intValue();
+        Integer midValue = list.get(mid);
+        Integer adValue = list.get(mid-1);
+        Integer agValue = list.get(mid+1);
         if(max>0){
             //insère la racine
             this.racine = new ArbreBRCons(midValue,new ArbreBRVide(),new ArbreBRVide());
         } else {
             
         }
-        */
     }
 
     public Integer getRacine() {
@@ -221,4 +300,6 @@ class ArbreBRCons extends ArbreBR {
         L.add(this.getRacine());
         this.getAd().arbreBRenTab(L);
     }
+    
+    
 }

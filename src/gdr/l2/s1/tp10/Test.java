@@ -24,8 +24,8 @@ public class Test {
         tree1.arbreBRenTab(list);
         afficherArrayList(list);
         
-        //ArbreBRCons tree3 = new ArbreBRCons(list);
-        //tree3.afficheGRD();
+        ArbreBRCons tree3 = new ArbreBRCons(list);
+        tree3.afficheGRD();
     }
     
     public static void afficherArrayList(ArrayList<Integer> list){
